@@ -8,12 +8,12 @@ const data = []
 for (let i = 0; i < 50_000; i++) {
 	data.push({
 		name: faker.commerce.productName(),
-		code: faker.number.int(),
+		code: faker.number.int(100_000),
 		InventoryTypeId,
 		InternalCodeTypeId: null,
 		ProductVersions: [{
 			status: 'waiting-for-creation',
-			code: faker.number.int(),
+			code: faker.number.int(100_000),
 			isDefaultVersion: true,
 			InventoryTypeId,
 			InternalCodeTypeId: null,
