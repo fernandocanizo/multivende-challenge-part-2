@@ -4,6 +4,7 @@
   "description": "Multivende Coding Challenge - Second Part",
   "main": "index.js",
   "scripts": {
+    "generate-fake-data": "node util/generate-products.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
