@@ -12,7 +12,7 @@ export const getAll = async () => {
 
 export const setCreatedStatus = async productId => {
   try {
-    await sql`update product set status = 'created' where id = ${productId}`
+    await sql`update product set fk_status = 'created' where id = ${productId}`
   } catch (e) {
     console.debug('>>>', e)
     return false
