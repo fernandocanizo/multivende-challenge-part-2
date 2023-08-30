@@ -8,6 +8,7 @@ const rawProductList = await getAll()
 
 const productList = rawProductList.map(product => {
 	return Buffer.from(JSON.stringify({
+		id: product.id,
 		name: product.name,
 		code: product.code,
 		InventoryTypeId: product.inventory_type_id,
