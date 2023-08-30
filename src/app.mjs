@@ -1,7 +1,7 @@
 import express from 'express'
 import httpLogger from 'morgan'
 
-import auth from './controller/auth.mjs'
+import * as auth from './controller/auth.mjs'
 
 const app = express()
 const port = 3000

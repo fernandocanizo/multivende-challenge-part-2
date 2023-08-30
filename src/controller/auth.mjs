@@ -1,12 +1,12 @@
 import got from 'got'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import auth from '../model/auth.mjs'
+import { save as authSave } from '../model/auth.mjs'
 
 export const login = (_, res) => {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-  return res.sendFile(path.join(__dirname, 'view/index.html'))
+  const index = path.join(path.dirname(__dirname), 'view/index.html')
+  return res.sendFile(index)
 }
 
 export const getToken = async (req, res) => {
@@ -33,7 +33,7 @@ export const getToken = async (req, res) => {
     token: data.token,
   }
 
-  await auth.save(authData)
+  await authSave(authData)
 
   return res.status(200).end()
 }
