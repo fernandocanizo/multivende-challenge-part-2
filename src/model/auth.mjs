@@ -9,10 +9,13 @@ export const save = async authData => {
   }
 }
 
-export const getToken = async () => {
+export const getConnectionData = async () => {
   try {
-    const result = await sql`select token from auth order by created_on desc limit 1`
-    return result[0].token
+    const result = await sql`select token, merchant_id from auth order by created_on desc limit 1`
+    return {
+      token: result[0].token,
+      merchantId: result[0].merchant_id,
+    }
   } catch (e) {
     console.debug('>>>', e)
     return false
