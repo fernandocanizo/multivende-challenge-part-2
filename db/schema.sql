@@ -5,6 +5,7 @@ create table if not exists status (
 insert into status (name) values
   ('waiting-for-creation'),
   ('created')
+  on conflict do nothing
   ;
 
 create table if not exists product (
@@ -23,4 +24,16 @@ create table if not exists product (
   pv_position int not null default 0,
 
   foreign key(fk_status) references status(name)
+);
+
+create table if not exists auth (
+  id serial primary key,
+  created_on timestamp not null default now(),
+  oauth_client_id text not null,
+  merchant_id text not null,
+  merchant_app_id text not null,
+  expires_at text not null,
+  refresh_token text not null,
+  refresh_token_expires_at text not null,
+  token text not null
 );
