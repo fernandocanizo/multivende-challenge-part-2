@@ -9,6 +9,7 @@ insert into status (name) values
   ;
 
 create table if not exists product (
+  id serial primary key,
   name text not null,
   code int not null,
   inventory_type_id text not null default '791a6654-c5f2-11e6-aad6-2c56dc130c0d',
