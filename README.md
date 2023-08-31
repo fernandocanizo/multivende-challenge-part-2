@@ -12,7 +12,7 @@ You can access [management UI](http://localhost:15672/) after launch with `user:
 
 ### Launch a Postgres server and setup database
 
-(Postgres configuration out of scope)
+(Postgres setup and role configuration out of scope)
 
 ```shell
 createdb multivende
@@ -33,7 +33,7 @@ This will create a `data.json` file at repo top folder which will be used by the
 node db/load-into-postgres.mjs
 ```
 
-This will create 50,000 fake products with minimum information on Postgres database. You can run it again to get double or maybe also regenerate `data.json` so you don't have duplicated products.
+This will create 50,000 fake products with minimum information on Postgres database. You can run it again to get double or maybe also regenerate `data.json` so you don't have (probably? many?) duplicated products.
 
 ### Queue products on RabbitMQ
 
