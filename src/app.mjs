@@ -2,6 +2,7 @@ import express from 'express'
 import httpLogger from 'morgan'
 
 import * as auth from './controller/auth.mjs'
+import * as product from './controller/product.mjs'
 
 const app = express()
 const port = 3000
@@ -16,11 +17,7 @@ app.get('/login', auth.login)
 
 app.get('/configuration', auth.getToken)
 
-app.get('/status', (_, res) => {
-  return res.status(501).json({
-    message: 'Not implemented',
-  })
-})
+app.get('/status', product.getStatus)
 
 app.listen(port, () => {
   console.log(`Listening on localhost, port ${port}`)
